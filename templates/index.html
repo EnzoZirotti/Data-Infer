@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop File Upload</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.css" rel="stylesheet">
+</head>
+<body>
+
+<h1>Drag and Drop File Upload</h1>
+<form action="/upload" class="dropzone" id="file-dropzone" method="post" enctype="multipart/form-data">
+</form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.9.3/min/dropzone.min.js"></script>
+<script>
+    Dropzone.options.fileDropzone = {
+        maxFilesize: 50,  // Maximum file size in MB
+        acceptedFiles: ".csv,.xls,.xlsx,.json,.parquet,.yaml,.yml,.pdf,.txt,.bin,.dat",  // Allowed file types
+        success: function(file, response){
+            alert(response);
+        }
+    };
+</script>
+
+</body>
+</html>
